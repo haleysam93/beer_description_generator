@@ -9,5 +9,5 @@ beer_descs = pd.read_csv('beer_descs.csv', index_col=False)
 beer_desc_model = markovify.Text(beer_descs.text)
 
 @app.route('/')
-def hello_world():
+def generate_beer_desc():
     return beer_desc_model.make_sentance()
